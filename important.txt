@@ -1,0 +1,58 @@
+email id: Shraddha.prajapati@techavidus.com
+TAP Password: SD@TA10
+
+c.	http://ta13/TAP/
+
+
+https://stackoverflow.com/questions/36823105/angular-2-edit-table-rows-inline-then-save-the-new-data
+
+
+Username: admin
+PW: 123qwe
+
+qwe123
+
+
+
+D:\tfs_src\LeasingSolution\Main\Source
+
+node 6.5.0
+
+D:\tfs_src\LeasingSolution\Main\Source\Frontend
+
+[selected]="caseBaseType.id == 1"
+
+
+PS D:\Projects\CAWEBAPP\src>
+
+var str = "auth0|5a9fa7727a392148fa27fa9d"
+
+return str.split('|')[1]
+str.split('|')[1]
+"5a9fa7727a392148fa27fa9d"
+
+var obj = JSON.parse(lsProfile)
+
+var jsonobj = JSON.stringify(obj)
+
+
+user defined word document templates in angular 2
+---------------------------------------------------
+
+sdfsgdsgsgsde354
+
+
+http://javascript-ninja.fr/docxtemplater/v1/examples/demo.html
+
+npm install officegen
+
+npm install docxtemplater
+
+
+Live MIT Project
+------------------
+
+http://203.192.235.219/MIT/#/login
+
+
+http://ta13/MIT/assets/img/gmap.png

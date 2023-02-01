@@ -1,0 +1,28 @@
+Publish in IIS
+--------------
+
+For enable IIS in windows
+  https://teckangaroo.com/enable-iis-windows-10/
+  
+  
+- In IIS create new folder inside default website (Web & API)
+
+- Right click on Default website => Add Application => Alias: name of the alias
+												  => Physical path : put local folder path where you are put into dll
+												  => Click OK
+For web: in folder path put published dist folder files
+For API : in folder path put dll
+
+For API install
+---------------
+
+=> Install urlrewrite2
+=> Install dotnet-hosting-3.1.0-win (with current latest version which you have to use in project)
+=> Install dotnet sdk and dotnet runtime 
+
+=> Issue : Handler "aspNetCore" has a bad module "AspNetCoreModule" in its module list
+
+For this issue change in web.config file 
+
+Change [modules="AspNetCoreModule"] to [modules="AspNetCoreModuleV2"]
+												  

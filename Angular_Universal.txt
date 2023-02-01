@@ -1,0 +1,31 @@
+Demo :URL= https://github.com/snipcart/angular-seo-universal
+1). For run:- npm run serve:ssr
+2). For build :- npm run build:ssr
+3). Configure IIS
+4). Install iisnode:-64bit:-
+Install urlrewriter
+ https://github.com/azure/iisnode/releases/download/v0.2.21/iisnode-full-v0.2.21-x64.msi
+		     32bit:- https://github.com/azure/iisnode/releases/download/v0.2.21/iisnode-full-v0.2.21-x86.msi
+    1. open cmd in run as administrator
+    2. type command:- cd C:/ProgramFiles
+    3. cd iisnode
+    4. cmd:- C:\Program Files\iisnode: setupsamples.bat
+    
+5). Web config setup using this code root dist->web.config
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+    <system.webServer>        
+      <handlers>
+        <add name="iisnode" path="server.js" verb="*" modules="iisnode"/>
+      </handlers>
+      <rewrite>
+        <rules>
+            <rule name="ViewSource">
+                 <match url="/*" />
+                 <action type="Rewrite" url="server.js"/>
+            </rule>
+       </rules>
+      </rewrite>
+    </system.webServer>
+   </configuration>
+6). Edit in serve.ts like replace this code:- const DIST_FOLDER = join(process.cwd(), 'dist'); To const DIST_FOLDER = join(process.cwd(), '/');

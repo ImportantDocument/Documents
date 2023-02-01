@@ -1,0 +1,18 @@
+conrext dependency problem
+-----------------------------
+
+Steps i took to fix this problem in case if someone encounters it:
+
+ 1) Package.json: remove webpack from DevDependencies
+ 2) rm -R node_modules (remove node_modules folder)
+ 3) npm i -g webpack
+ 4) npm i -g webpack-dev-server
+ 5) remove package-lock.json (if it’s there)
+ 6) npm i
+ 7) npm start
+ 
+ 
+ For females, mobile number and address should not be "Visible to all" in user profile section
+ 
+ 
+ 

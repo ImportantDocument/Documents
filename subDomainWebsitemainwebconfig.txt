@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <configuration>
+   <system.webServer>
+    <rewrite>
+      <rules>
+	  <clear />
+            <!--START REDIRECT TO ROOT-->
+            <rule name="AppCrmJS" stopProcessing="true">
+              <match url=".*" />
+               <conditions logicalGrouping="MatchAll">
+                  <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                  <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true"  />
+				  <add input="{URL}" pattern="^/subapp/(.*)$" negate="true" />
+               </conditions>
+                <!-- <action type="Rewrite" url="/" /> -->
+			   <action type="Rewrite" url="./index.html" />
+            </rule>
+           <!--END REDIRECT TO ROOT-->
+
+         </rules>  
+      </rewrite>  
+    </system.webServer>
+ </configuration>  

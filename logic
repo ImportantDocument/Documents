@@ -1,0 +1,159 @@
+  onPropertyTileClick(property: any) {
+    if (property) {
+      debugger
+      // Start old code for only propertydetailId store in to coockie 
+      // let isCookieExist = this.cookieService.check(this.homeViewerCookieName);
+      // /**
+      //  * count home as viewed cases
+      //  * case 1: check home_viewer cookie, if its not exist save browser cookie, addView count for       that home and save the cookie if user loged in.
+      //  * case 2: check home_viewer cookie, if its exist then update browser coockie, addView count for   that home and save the cookie if user loged in.
+      //  */
+      // if (!isCookieExist) {
+      //   let homeViewCookie: IHomeViewerCookie = new IHomeViewerCookie();
+      //   homeViewCookie.Ids = property.PropertyDetailId.toString();
+      //   this.cookieService.set(this.homeViewerCookieName, JSON.stringify(homeViewCookie));
+      //   if (this.isUserCookieExist) {
+      //     this.savePropertyViewCount(property.PropertyDetailId);
+      //   }
+      //   this.AddViewCount(property);
+      // } else {
+      //   let propertiesInCookie: IHomeViewerCookie = JSON.parse(this.cookieService.get(this.homeViewerCookieName));
+      //   if (propertiesInCookie) {
+      //     let ids = propertiesInCookie.Ids.split(",");
+      //     if (!ids.filter(x => parseInt(x) == property.PropertyDetailId)[0]) {
+      //       ids.push(property.PropertyDetailId.toString());
+      //       let idStr = ids.join(",");
+      //       propertiesInCookie.Ids = idStr;
+      //       this.cookieService.set(this.homeViewerCookieName, JSON.stringify(propertiesInCookie));
+      //       if (this.isUserCookieExist) {
+      //         this.savePropertyViewCount(property.PropertyDetailId);
+      //       }
+      //       this.AddViewCount(property);
+      //     }
+      //   }
+      // }
+      //----- End code
+
+      // let todaydate = new Date().toLocaleDateString();
+      // let today = new Date(todaydate);
+      let today = moment(new Date()).format('MM/DD/YYYY');
+      let timePeriod = this.selectedValue.split("-");
+      let from = +timePeriod[0];
+      let to = +timePeriod[1];
+      var fromDate = new Date(new Date().setDate(new Date().getDate() - from));
+      let toDate = new Date(new Date().setDate(new Date().getDate() - to));
+      let proparr = JSON.parse(localStorage.getItem("prop_viewer"));
+      var test = moment(new Date()).format('MM/DD/YYYY');
+      console.log("test", test);
+      if (proparr) {
+        if (proparr.Homes.length > 0) {
+          var date = new Date(property.ActivatedDate).toLocaleDateString()
+          // let ActivatedDate = new Date(date);
+          // let Activate7Days = this.addDays(new Date(ActivatedDate), 7);
+          //  let Activate8Days = this.addDays(new Date(ActivatedDate), 8);
+          //  let Activate14Days = this.addDays(new Date(ActivatedDate), 14);
+          //  let Activate15Days = this.addDays(new Date(ActivatedDate), 15);
+          //  let Activate21Days = this.addDays(new Date(ActivatedDate), 21);
+          //  let Activate22Days = this.addDays(new Date(ActivatedDate), 22);
+          //  let Activate28Days = this.addDays(new Date(ActivatedDate), 28);
+          let ActivatedDate = moment(property.ActivatedDate).format('MM/DD/YYYY');
+          console.log("ActivatedDate", ActivatedDate);
+
+          var Activate7Days = moment(ActivatedDate).add(7, 'days').format("MM/DD/YYYY");
+          console.log("Activate7Days", Activate7Days);
+
+          var Activate8Days = moment(ActivatedDate).add(8, 'days').format("MM/DD/YYYY");
+          console.log("Activate8Days", Activate8Days);
+
+          var Activate14Days = moment(ActivatedDate).add(14, 'days').format("MM/DD/YYYY");
+          console.log("Activate14Days", Activate14Days);
+
+          var Activate15Days = moment(ActivatedDate).add(15, 'days').format("MM/DD/YYYY");
+          console.log("Activate15Days", Activate15Days);
+
+          var Activate21Days = moment(ActivatedDate).add(21, 'days').format("MM/DD/YYYY");
+          console.log("Activate21Days", Activate21Days);
+
+          var Activate22Days = moment(ActivatedDate).add(22, 'days').format("MM/DD/YYYY");
+          console.log("Activate22Days", Activate22Days);
+
+          var Activate28Days = moment(ActivatedDate).add(28, 'days').format("MM/DD/YYYY");
+          console.log("Activate28Days", Activate28Days);
+
+
+          if (today >= ActivatedDate && today <= Activate7Days) {
+            let isdiplicatelen = proparr.Homes.filter(t => Number(t.Id) === property.PropertyDetailId && moment(t.ViewDate).format('MM/DD/YYYY') >= ActivatedDate &&
+            moment(t.ViewDate).format('MM/DD/YYYY') <= Activate7Days).length;
+            if (isdiplicatelen > 0) {
+              return false;
+            } else {
+              let home = {};
+              home["Id"] = property.PropertyDetailId.toString();
+              home["ViewDate"] = new Date().toLocaleDateString();
+              proparr.Homes.push(home);
+            }
+          } else if (today >= Activate8Days && today <= Activate14Days) {
+            let isdiplicatelen = proparr.Homes.filter(t => Number(t.Id) === property.PropertyDetailId && moment(t.ViewDate).format('MM/DD/YYYY') >= Activate8Days &&
+            moment(t.ViewDate).format('MM/DD/YYYY') <= Activate14Days).length;
+            if (isdiplicatelen > 0) {
+              return false;
+            } else {
+              let home = {};
+              home["Id"] = property.PropertyDetailId.toString();
+              home["ViewDate"] = new Date().toLocaleDateString();
+              proparr.Homes.push(home);
+            }
+          } else if (today >= Activate15Days && today <= Activate21Days) {
+            let isdiplicatelen = proparr.Homes.filter(t => Number(t.Id) === property.PropertyDetailId && moment(t.ViewDate).format('MM/DD/YYYY') >= Activate15Days &&
+            moment(t.ViewDate).format('MM/DD/YYYY') <= Activate21Days).length;
+            if (isdiplicatelen > 0) {
+              return false;
+            } else {
+              let home = {};
+              home["Id"] = property.PropertyDetailId.toString();
+              home["ViewDate"] = new Date().toLocaleDateString();
+              proparr.Homes.push(home);
+            }
+          } else if (today >= Activate22Days && today <= Activate28Days) {
+            let isdiplicatelen = proparr.Homes.filter(t => Number(t.Id) === property.PropertyDetailId && moment(t.ViewDate).format('MM/DD/YYYY') >= Activate22Days &&
+              moment(t.ViewDate).format('MM/DD/YYYY') <= Activate28Days).length;
+            if (isdiplicatelen > 0) {
+              return false;
+            } else {
+              let home = {};
+              home["Id"] = property.PropertyDetailId.toString();
+              home["ViewDate"] = new Date().toLocaleDateString();
+              proparr.Homes.push(home);
+            }
+          } else {
+            let home = {};
+            home["Id"] = property.PropertyDetailId.toString();
+            home["ViewDate"] = new Date().toLocaleDateString();
+            proparr.Homes.push(home);
+          }
+        } else {
+          proparr = new IPropertyViewerCookie();
+          proparr.Homes = [];
+          let home = new IHomeCoockie();
+          home.Id = property.PropertyDetailId.toString();
+          home.ViewDate = new Date().toLocaleDateString();
+          proparr.Homes.push(home);
+        }
+      }
+      else {
+        proparr = new IPropertyViewerCookie();
+        proparr.Homes = [];
+        let home = new IHomeCoockie();
+        home.Id = property.PropertyDetailId.toString();
+        home.ViewDate = new Date().toLocaleDateString();
+        proparr.Homes.push(home);
+      }
+
+      if (!this.isUserCookieExist) {
+        this.AddViewCount(property);
+      } else {
+        this.savePropertyViewCount(property);
+      }
+      localStorage.setItem("prop_viewer", JSON.stringify(proparr));
+    }
+  }

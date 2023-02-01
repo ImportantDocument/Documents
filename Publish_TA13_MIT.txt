@@ -1,0 +1,81 @@
+
+MIT PUBLISH IN TA13
+-------------------
+
+For Web
+     
+	 1. In index page change <base href="/"> to <base href="/MIT/">
+	 2. In environment.ts file Uncomment this APIURL:'http://203.192.235.219/MITAPI/api'
+	 3. ng build --base-href=/MIT/
+	 4. Copy generated dist folder and paste to the \\TA13\Website\MIT
+	 
+	 
+For WebApi
+  
+     1. In appsettings.Development.json file uncomment  "ValidIssuer": "http://203.192.235.219/MIT/API/",
+                                                        "ValidAudience": "http://203.192.235.219/MIT/"
+													
+     2. Right click on api project -> Select Publish 
+	                               -> If Foldder not selected then->(select on Configure -> Target Location for path which have to put publish version)
+								   -> If Folder already selected then click on Publish
+								   
+								   OR dotnet publish -c Release -o ./publish
+								   
+     3. Copy generated publish folder and paste to the \\TA13\Website\MIT\API
+	 
+	 
+	 
+Git path 
+---------
+
+ http://ta13/BonoboGitServer
+  username : shraddha.prajapati
+  Password : Shraddha@1111
+  
+ repository link : http://admin@ta13/BonoboGitServer/MIT.git
+ 
+ 
+	 tcp:TA33\SS2017
+
+http://ta13/BonoboGitServer/MIT.git
+
+
+
+	 select * from Users where IsAdmin = 1
+
+update Users set IsActive = 1 where IsAdmin = 1.
+
+https://stackblitz.com/edit/mat-select-autocomplete
+https://medium.com/@cryptoipl/angular-material-multi-select-with-autocomplete-113065d58dab
+
+https://stackblitz.com/edit/image-cropper
+
+https://codepen.io/enlcxx/pen/vmadQz - image crop better solution
+
+
+
+
+
+
+
+
+
+https://jsfiddle.net/ramnathv/mjt4s35x/  side bar link
+
+
+ <TargetFramework>netcoreapp2.1</TargetFramework>
+
+
+
+select * from Users order by Id desc
+
+select * from UserProfiles order by ID desc
+
+select * from Businesses
+
+select * from BusinessTags
+
+select * from SelfTags
+
+select BusinessTags.TagId, Businesses.UserID from BusinessTags join Businesses on Businesses.ID = BusinessTags.BusinessId where BusinessTags.TagId = 1
+ 

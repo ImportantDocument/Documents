@@ -1,0 +1,27 @@
+VPN Credential
+--------------
+UserNAme: shradhha
+PW: ^qm>)J4]"#
+
+TA4 
+----
+UserNAme: user1
+PW: user1@123
+
+Email Credential
+-------------------
+
+email id: Shraddha.prajapati@techavidus.com
+TAP Password: SD@TA10
+
+BonoboGitServer
+--------------
+shraddha.prajapati
+shraddha@1111
+
+link: http://192.168.1.13/BonoboGitServer/Home
+
+http://113.212.87.157/5057/api/insider/test
+
+
+Customer, Organization,Lead edit/delete/markasDone/MarkasToDo functionality completed

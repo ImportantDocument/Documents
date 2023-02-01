@@ -1,0 +1,65 @@
+Create new folder => open created folder in to cmd
+- below command run in to cmd
+
+Reference : https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new
+
+Create Solution
+----------------
+dotnet new sln
+
+For solution create with specific name
+--------------------------------------
+dotnet new sln --name "Name of the solution"
+
+Check list of project create
+-----------------------------
+dotnet new --list
+
+Create new dotnet api project
+------------------------------
+dotnet new webapi
+dotnet new webapi --name "project name"
+
+Add project into solution
+--------------------------
+dotnet sln add projectfoldername/projectname.csproj
+
+- After this execute command created folder api project create
+
+Create new angular project
+--------------------------
+- ng new foldername
+
+Add one project reference to other project 
+------------------------------------------
+
+dotnet add "desinationProjname/project.csproj" reference "sourceprojectname/project.csproj"
+
+Reference link
+----------------
+https://cann0nf0dder.wordpress.com/2020/08/30/basic-dotnet-command-calls-to-create-a-c-project-in-visual-studio-code/
+
+
+
+For Add controller install package
+----------------------------------
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 5.0.0
+
+dotnet-aspnet-codegenerator controller -name JobController -api -outDir Controllers
+
+Create model and context from Existing database
+-------------------------------------------------
+
+dotnet ef dbcontext scaffold "Data Source=185.102.95.72,1433;Initial Catalog=JobCRM_DB;User Id=sa;Password=Mate--POP--2020" Microsoft.EntityFrameworkCore.SqlServer -o Models/Tables -f -c JobCRM_Context
+
+Reference Link
+-------------
+
+https://cmatskas.com/scaffolding-dbcontext-and-models-with-entityframework-core-2-0-and-the-cli/
+
+
+Scaffold-DBcontext "Server=localhost\\SQLEXPRESS;Database=JwtTokenTest;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer
+
+Reference Link
+--------------
+https://jasonwatmore.com/post/2019/10/14/aspnet-core-3-simple-api-for-authentication-registration-and-user-management#users-controller-cs

@@ -1,0 +1,156 @@
+List Of Points Refered:
+-----------------------
+Angular
+
+ . Behavior with directives
+ . Flexibility with filters
+ . Write less code
+ . DOM manipulations where they belong
+ . Service providers where they belong
+ . broadcast() will send a message to all children controllers, while emit() will send a message to all ancestors.
+ 
+-difference between angular 2 nad 4
+-------------------------------------
+
+ . reduced it’s bundled file size
+ . angular 2 suports javascript and angular 4 suports TypeScript 2.1 & 2.2
+ . Angular v2.0 has changed to component based UI
+ 
+ 
+-Type script(5:18)
+
+Angular CLI
+------------
+
+The Angular CLI is a tool to initialize, develop, scaffold and maintain Angular applications
+
+ng serve builds the application and starts a web server.
+
+ng generate [name] generates the specified schematic
+
+ng generate component [name] generates a component
+
+ng generate directive [name] generates a directive
+
+ng generate module [name] generates an NgModule
+
+ng lint will lint you app code using tslint.  ng lint [project]
+
+Create Angular 5 first application
+-----------------------------------
+
+https://dzone.com/articles/getting-started-with-angular-5-using-visual-studio-1
+
+CRUD operation using database
+-----------------------------
+
+http://www.dotnetmob.com/angular-5-tutorial/angular-5-with-web-api-crud-application/
+
+
+generate new component
+-----------------------
+
+https://github.com/angular/angular-cli
+$ ng generate component [component_Name]
+$ ng g c [component_Name]
+
+ng generate pipe [name] generates a pipe
+
+Introducing Angular pipes, a way to write display-value transformations that you can declare in your HTML.
+
+RouterModule.forRoot(appRoutes)
+
+Directive output and emit example Link
+----------------------------------
+how to send event emitter object send
+
+https://www.concretepage.com/angular-2/angular-2-custom-event-binding-eventemitter-example
+
+Angular Life Cycle
+------------------
+
+https://www.c-sharpcorner.com/article/angular-5-lifecycle-hooks-part-two/
+https://www.c-sharpcorner.com/article/learn-about-angular-lifecycle-hooks/
+
+angular use of services with local json file
+--------------------------------------------
+--------------------------------------------
+http://www.encodedna.com/angular/read-an-external-json-file-in-angular-4-and-convert-data-to-table.htm
+
+Set Routing
+------------
+https://coryrylan.com/blog/introduction-to-angular-routing
+
+angular 4 routing with 2 component in diff page tutorial
+https://www.thepolyglotdeveloper.com/2016/11/navigating-web-application-angular-2-router/
+
+Indroduction in Form -builder
+-----------------------------
+
+https://www.concretepage.com/angular-2/angular-2-4-formbuilder-example#project
+
+Useing Form-Builder validation
+-------------------------------
+https://stackblitz.com/edit/angular-5hwcff?file=src%2Fapp%2Fcontrol-messages.component.ts
+
+https://auth0.com/blog/angular2-series-forms-and-custom-validation/
+
+add form control dynamically in angular5
+
+Implement Modal Popup
+----------------------
+
+http://www.agiratech.com/angular-typescript-modal-window/
+
+implement sweet alert
+---------------------
+
+https://www.npmjs.com/package/sweetalert2
+
+Implement 3rd party Pagination
+-------------------------------
+http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
+
+Angular Material Datatable
+--------------------------
+https://material.angular.io/components/table/overview
+https://material.angular.io/cdk/table/overview
+https://material.angular.io/components/table/overview
+
+angular material data table example
+-----------------------------------
+https://medium.com/codingthesmartway-com-blog/angular-material-part-4-data-table-23874582f23a
+
+
+
+
+
+
+
+angular 5 with web api CRUD operation
+---------------------------------------
+http://www.dotnetmob.com/angular-5-tutorial/angular-5-with-web-api-crud-application/      ----------
+https://auth0.com/blog/angular2-series-forms-and-custom-validation/
+https://stackblitz.com/edit/angular-5hwcff?file=src%2Fapp%2Fcontrol-messages.component.ts
+
+
+employeeService employeeService
+
+angular 5 table inline editing record
+Pending List
+------------
+
+-https://aspnetzero.com/ : AspNetZero
+-Introduction to asp.net core:  https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.1
+
+
+
+
+
+system.diagnostics.process with sqlcmd commands
+
+https://social.msdn.microsoft.com/Forums/en-US/75cd121d-75cb-46fa-8dd6-5088dec4cff9/open-command-prompt-from-c-program-and-run-sqlcmd-utility?forum=csharpgeneral
+
+
+
+Workstatus

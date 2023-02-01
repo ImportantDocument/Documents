@@ -1,0 +1,835 @@
+ http://ta13/SurveyBuilder/Survey/Detail/9
+admin@orgvitality.com
+Admin@123
+
+clone new project into your machine
+
+- git clone url
+
+https://shraddha.prajapati@203.192.235.219/BonoboGitServer/Homebuzz.git
+
+
+Check file changes
+-------------------
+- git status
+
+Changes show
+-----------
+- gitk
+
+- git add . [add all file changes to stage]
+- git add filename [perticular file stage] 
+- git commit -m "add_comment"  [for commit into local]
+- git remote -v [check server]
+- git push origin(servername) branchname  [commit into server branch]
+- git reset [for all changes for unstage]
+
+- git checkout master (move into master branch)
+- git pull origin master [get letest from master]
+- git merge branchname [merge into master]
+- git push origin master [push changes into master]
+- git fetch origin branchname [fetch any branch]
+-  git remote set-url origin url[http://shraddha.prajapati@203.192.235.219/BonoboGitServer/Homebuzz.git] => 
+git remote set-url origin http://113.212.87.157/BonoboGitServer/Homebuzz.git
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+Error:- Could not execute because the specified command or file was not found cmd
+Solution:- dotnet tool install --global dotnet-ef
+
+time tracker ramaining
+------------------------
+8 hr remaining to trach
+21/08/2019 :- shraddha 3hr 40min  working email functionality
+22/08/2019 :- shraddha 1hr 30 min remaining
+
+-------LatitudeLongitude-----
+
+SELECT LEFT(LatitudeLongitude, CHARINDEX(',', LatitudeLongitude)) as Latitude, RIGHT(LatitudeLongitude, LEN(LatitudeLongitude) - CHARINDEX(',', LatitudeLongitude)) as Longitude FROM PropertyData
+
+Insert into LAtitude and longitude
+---------------------------------
+
+UPDATE PropertyData set Latitude = LEFT(LatitudeLongitude, CHARINDEX(',', LatitudeLongitude)),
+
+Longitude = RIGHT(LatitudeLongitude, LEN(LatitudeLongitude) - CHARINDEX(',', LatitudeLongitude)) 
+
+UPDATE PropertyData 
+SET Latitude = RTRIM(Latitude)
+
+UPDATE PropertyData 
+SET Longitude = LTRIM(Longitude) where Id = 61172
+
+Remove comma
+-----------
+update PropertyData set Latitude = replace(Latitude,',','') where Latitude like '%,'
+
+Data Insert Sheet1 to PropertyData
+----------------------------------
+
+INSERT INTO PropertyData (
+Address
+,HomebuzzEstimate
+,Bedrooms
+,Bathrooms
+,Carparks
+,Landarea
+,LatitudeLongitude)
+SELECT 
+Address
+,[HomebuzzEstimate Mar 2019]
+,Bedrooms
+,Bathrooms 
+,Carparks
+,LandArea
+,LatitudeLongitude
+ FROM Sheet1$
+ 
+ 
+-------------------------------
+
+truncate table PropertyClaim
+truncate table PropertyCrudData
+truncate table PropertyDetail
+truncate table PropertyImage
+truncate table PropertyLike
+truncate table PropertyOffer
+truncate table PropertyView
+
+------------------------------
+
+
+	    DECLARE @SearchResult TABLE
+    (
+	    Id INT,
+		Latitude varchar(100),
+		Longitude varchar(100)
+    );
+
+		INSERT INTO @SearchResult(
+		Id,
+		Latitude,
+		Longitude)
+		Select distinct
+		p.Id,
+		(SELECT LEFT(p.LatitudeLongitude, CHARINDEX(',', p.LatitudeLongitude)) as Latitude,
+		(SELECT RIGHT(p.LatitudeLongitude, CHARINDEX(',', p.LatitudeLongitude)) as Longitude
+		from PropertyData p 
+		where p.Latitude LIKE '%-34.499932677354124,%'
+		
+		decimal(30, 15)
+
+Start api in node
+-----------------
+
+cmd go into folder 
+-npm run start
+
+Go to IIS folder
+----------------
+=> cd Program Files\iisnode
+
+IIS stop and Restart
+---------------------
+
+=> iisreset /noforce
+
+Right click on gitfolder --> select Git Bash here
+
+Undo changes : git checkout .
+create branch : git checkout -b branchname
+view your changes : git status
+change branch : git checkout branchname
+Delete branch : git branch -d branchname
+selectees
+
+http://localhost:5000/api/PropertyCrudData/GetAllPropertyCrudData?searchTerm=Wellington&period=30
+
+
+https://stackblitz.com/edit/angular-1ueqog
+
+bhaveshbhai Pc pw : 5995
+
+28/06
+
+
+
+GX23+2C Te Hapua, New Zealand
+1: 10 to 1:30 break
+
+50000
+
+
+
+ALTER TABLE Propertydata
+ALTER COLUMN Address VARCHAR(1000)
+ALTER TABLE Propertydata
+ALTER COLUMN Bedrooms VARCHAR(500)
+ALTER TABLE Propertydata
+ALTER COLUMN Bathrooms VARCHAR(500)
+ALTER TABLE Propertydata
+ALTER COLUMN Carparks VARCHAR(500)
+ALTER TABLE Propertydata
+ALTER COLUMN Landarea VARCHAR(500)
+ALTER TABLE Propertydata
+ALTER COLUMN LatitudeLongitude VARCHAR(1000)
+
+
+SELECT  STUFF(( SELECT  ', ' + CAST(Id as VARCHAR(10))
+                FROM    ( SELECT DISTINCT
+                                    ID
+                          FROM      PropertyImage
+
+                        ) x
+              FOR
+                XML PATH('')
+              ), 1, 2, '') AllLures
+			  
+			  
+
+
+VSCode Migration
+-----------------
+
+Add Migration :- dotnet ef migrations add yourMigrationName --project yourprojectName
+
+-- dotnet ef migrations add PropertyCrudData_ColumnType_Change_20190807 --project HomeBuzz.data
+
+Update Database :- dotnet ef database update --project HomeBuzz.data yourprojectName
+
+Publish 
+--------
+
+dotnet publish -c Release -o ./publish
+
+SET NODE_OPTIONS=--max_old_space_size=8048
+
+ng build --base-href "/web/" --prod
+
+FlowIterese.index
+
+TA33: password - 8233
+
+TA33: 192.168.1.33
+
+User name = user1
+Password = user1@123
+
+
+how to send mail using smtp by using c#
+
+how to change email port
+
+Issue: AddUpdateProperty API
+
+MATE-SRV01
+sa
+Admin@123
+
+Shraddha@123
+
+
+3061
+
+
+Saint Johns, Auckland
+
+-----------------------------------------
+	DECLARE @IsExistCount AS INT
+	SELECT @IsExistCount =  COUNT(*) from PropertyCrudData p INNER JOIN PropertyDetail pd ON pd.Id = p.PropertyDetailId
+	where (p.Longitude between @swlng AND @nelng
+		AND (p.Latitude between @nelat AND @swlat))
+	AND pd.ActivatedDate <= DATEADD(DD, -@from,GETDATE())
+	AND pd.ActivatedDate >= DATEADD(DD, -@to,GETDATE())
+
+	Declare @PropertyDataCount AS INT
+	If(@IsExistCount = 0)
+		BEGIN
+		Select @PropertyDataCount =  COUNT(*) from PropertyData where  (Longitude between @swlng AND @nelng
+		AND (Latitude between @nelat AND @swlat))
+		END
+
+	SELECT @IsExistCount
+
+	SELECT @PropertyDataCount
+	
+	
+------------------------------------
+
+Special:
+
+\A\d*?([A-Z]?(^[\w&.\-\/]+$))\z
+
+\A\d*?([A-Z]?(^[\w&.\-\/]+$))\z
+
+
+Regex match = new Regex("\A\d*?([A-Z]?(^[\w&.\-\/]+$))\z");
+				searchedPropeties = GetMany(p => match.Match(p.Address) == searchTerm).Result.Take (100).ToList ();
+				
+				
+				
+				
+				
+				
+				2: 10 PM Change in Store procedure
+
+to 5:40
+
+
+20190904
+
+-----------
+
+
+10:15   : index of to 12 50
+
+Replace full address 4:40
+
+Regex : 4:40  timer stop
+
+total 6:10
+
+7:35 complete
+
+6:35 to 7:35 for GetOffer by PropertyDetailId
+
+Description Issue 6:00 to 6:35
+
+R & D for Regex 4:40 to 6:00
+
+total 6:10
+
+
+20190909
+--------------
+
+Admin: add extra column in selector named "Language" 11:00 AM to 1:00 PM
+
+Admin: add "Import survey" & "Export Survey buttons" in Language tab next to language drop down 1:20PM to 3:35
+
+Loader in ClientApp and logo change :5:30 PM to 6:25 PM
+
+HomeBuzz : SP changes 3:35 to 5:30 , 6:25PM to 7:50
+
+
+ 20190920
+ ---------
+ 
+ HomeBuzz
+ 
+	Add new field in propertyCrudData table named with "AskingPrice" [10:50]  Change in SP 'GETPROPERTIES','GETPROPERTIESBYPAGINATION',
+	'GETPROPERTIESBYPAGINATION_New', 'GETPROPERTIESVIEWCOUNT', 
+	Save Asking Price [10:50 to 12:30]
+	lunch break tracker[1:50 hr]
+	RenewClaim [12:55 to 2:15]
+	Return how many day left to get expire the claimed home.[2:15 to 2:45]
+	In wireframe check flow of make offer mail send [2:45 to 3:45]
+	Publish in local server and explain functionality to Alpesh [3:45 to 4:30]
+	Remove Offer [4:30 to 5:30]
+	Home owner get mail for Offers[5:30 to 7:00]
+	Publish in local server and test email functionality [7:00 to 7:50]
+	
+	Total Upwork today[8:00]
+	
+	Seller means - Owner
+	Buyer means - Offer maker
+
+
+  isHTML(str) {
+    let a = document.createElement('div');
+    a.innerHTML = str;
+
+    for (let c = a.childNodes, i = c.length; i--;) {
+      if (c[i].nodeType == 1) return true;
+    }
+
+    return false;
+  }
+  
+  tsc
+  node --max-old-space-size=16000 dist/app.js
+  
+  
+  --SELECT CAST(LEFT(LatitudeLongitude, CHARINDEX(',', LatitudeLongitude)) AS decimal(30, 15)) FROM PropertyData
+
+--SELECT convert(decimal(30, 15), LEFT(LatitudeLongitude, CHARINDEX(',', LatitudeLongitude)) ) FROM PropertyData
+-- where Id > 200000
+
+--ALTER TABLE PROPERTYDATA
+--ALTER COLUMN Latitude Nvarchar(1000)
+--ALTER TABLE PROPERTYDATA
+--ALTER COLUMN Longitude Nvarchar(1000)
+
+
+ ;WITH Split_Names (Id,LatitudeLongitude,xmlname)
+AS
+(
+    SELECT TOP 1 Id,LatitudeLongitude,
+    CONVERT(XML,'<Names><name>'  
+    + REPLACE(LatitudeLongitude,',', '</name><name>') + '</name></Names>') AS xmlname
+      FROM PropertyData
+)
+
+Update p
+SET Latitude = xmlname.value('/Names[1]/name[1]','varchar(100)'),
+Longitude = xmlname.value('/Names[1]/name[2]','varchar(100)')
+from PropertyData p
+INNER JOIN Split_Names s ON p.Id = s.Id
+
+
+ng g component component-name --skip-import
+
+
+
+https://trello.com/b/thBUB9El/homebuzz
+https://medium.com/@zainzafar/routable-modals-in-angular-64fb213199c7
+https://valor-software.com/ngx-bootstrap/#/modals#service-component
+https://netbasal.com/give-your-modals-url-address-with-auxiliary-routes-in-angular-eb76497c0bca
+https://forums.asp.net/t/2148659.aspx?Angular+6+RouterLink+to+open+modal+popup+from+the+ngOnInit+function
+https://stackblitz.com/edit/angular-unwooq?file=src%2Fapp%2Fapp.component.html
+https://stackoverflow.com/questions/49664685/angular-passing-data-between-routes
+https://developers.google.com/maps/documentation/javascript/style-reference
+https://stackoverflow.com/questions/28644169/how-to-hide-all-the-names-of-small-towns-on-google-maps
+https://sketch2code.azurewebsites.net/
+https://stackblitz.com/edit/angular-8-custom-modal-dialog?file=package.json
+https://jasonwatmore.com/post/2019/07/12/angular-8-custom-modal-window-dialog-box
+https://stackblitz.com/edit/angular-cojkgf?file=app%2Ftest%2Ftest.module.ts
+https://stackblitz.com/edit/angular-8-custom-modal-dialog?file=src%2Fapp%2Fhome%2Fhome.component.html
+https://stackblitz.com/edit/angular-cojkgf?file=styles.css
+https://www.browserstack.com/
+
+
+TA4 Anydesk
+-----------
+Id: 439462645
+PW: Admin@6342
+
+TA24 sql local connection string
+---------------------------------
+
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+Server=localhost\SQLEXPRESS;Database=HomeBuzzLocal;Trusted_Connection=True;
+"DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=HomeBuzzLocal;Trusted_Connection=True;"
+
+Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;
+
+SELECT Address, [Suburb/Town], City, [PropertyLight Estimate] ,Bedrooms, Bathrooms, Garages,[Land area], LatitudeLongitude  FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0',
+	'Excel 12.0;HDR=Yes;IMEX=1;Database=D:\Projects\Homebuzz\Homebuzz\Docs\Estimates book 1.xlsx',
+	'SELECT * FROM [Sheet1$]')
+	
+	
+	Change in angular.json file for check error in production
+	-------------------------------------------------------
+	
+	"production": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+
+
+--INSERT INTO PropertyFlowInterestHourly (ViewCount, PropertyDetailId, Ranking, ComparativeInterest, ViewBlock , PerformanceRange, HigherPerformanceRange, LowerPerformanceRange, Performance, ViewerStrength, CreatedOn, RankingStatus)
+--SELECT ViewCount, PropertyDetailId, Ranking, ComparativeInterest, ViewBlock , PerformanceRange, HigherPerformanceRange, LowerPerformanceRange, Performance, ViewerStrength, CreatedOn, RankingStatus
+--FROM PropertyFlowInterest
+
+npm run build:client-and-server-bundles && npm run compile:server
+
+
+SignInwithGoogle
+---------------
+http://client2.localhost:4500/
+https://www.youtube.com/watch?v=fgzRnlB992s
+https://www.roundthecode.com/dotnet/how-to-add-google-authentication-to-a-asp-net-core-application
+
+Shraddha@123
+Google Authentication: 
+
+ClientId: 1011977732456-72d3aar6d8u469gir3f9avi0r6qs8lcb.apps.googleusercontent.com
+ClientSecretId: F0o94elC2jrb0S_hBL3449vk
+
+
+Angular material table expand row with inside table
+----------------------------------------------------
+
+https://stackblitz.com/edit/angular-nested-mat-table-p1jmeu?file=app%2Ftable-expandable-rows-example.html
+
+For document download using asp.net core-application
+-----------------------------------------------------
+
+https://codeburst.io/upload-download-files-using-httpclient-in-c-f29051dea40c
+
+TA4 connection string sql
+-------------------------
+tcp:192.168.1.4\\TA4,1438
+
+VPN Credential
+--------------
+UserNAme: shradhha
+PW: ^qm>)J4]"#
+
+TA4 credential
+----------------
+UserNAme: user1
+PW: user1@123
+user1@123
+
+TA4 shared folder
+------------------
+\\192.168.1.4\Shared
+
+
+DragDrop material reference link
+---------------------------------
+
+https://stackblitz.com/edit/angular-b6awye?file=src%2Fapp%2Fcdk-drag-drop-connected-sorting-group-example.html
+https://stackblitz.com/edit/angular-z24u7i?file=src%2Fapp%2Fcdk-drag-drop-disabled-sorting-example.ts
+https://stackblitz.com/edit/angular-drag-and-drop-example?file=src%2Fapp%2Fapp.component.html
+
+Dragdrop angular material column
+--------------------------------
+https://stackblitz.com/edit/angular-mat-table-columns-draggable?file=src%2Fapp%2Fapp.component.html
+https://material.angular.io/cdk/drag-drop/overview
+
+DragDrop angular material table row
+-----------------------------------
+https://stackblitz.com/edit/table-drag-n-drop-n5jitk?file=app%2Ftable-basic-example.html 
+
+KanbanView
+-----------
+https://stackblitz.com/github/htmlelements/smart-webcomponents-angular/tree/master/demos/kanban/overview/?file=src%2Fassets%2Fdata.ts
+https://stackblitz.com/edit/ng-kanban-fire?file=src%2Fapp%2Ftask%2Ftask.component.html
+https://stackblitz.com/edit/ng-kanban-fire?file=src%2Fapp%2Fapp.component.html
+https://stackblitz.com/edit/ng-kanban-fire-phuz4z?file=src%2Fapp%2Fapp.component.html
+
+
+board drag drop same as trello
+------------------------------
+https://stackblitz.com/edit/angular-board-drag-and-drop?file=src%2Fapp%2Fboard-dnd-list%2Fboard-dnd-list.component.html
+
+Calender View
+--------------
+
+https://stackblitz.com/edit/angular-calendar-month-view-empty-event-container?file=demo-utils%2Fcolors.ts
+
+
+SignalR
+----------
+
+https://www.codemag.com/article/1807061/Build-Real-time-Applications-with-ASP.NET-Core-SignalR
+https://www.zealousweb.com/signalr-to-send-real-time-notifications-with-asp-net-core/
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-5.0&tabs=visual-studio
+https://www.c-sharpcorner.com/article/real-time-angular-11-application-with-signalr-and-net-5/
+
+
+
+https://www.positronx.io/angular-lazy-load-modules-tutorial-with-example/
+https://www.ganatan.com/tutorials/lazy-loading-with-angular
+
+
+
+C:\Users\TA24\Documents\OneClapp20210401.sql
+
+Theme integration publish url 
+-----------------------------
+
+http://113.212.87.157:5065/api/WeatherForecast
+
+http://113.212.87.157:5055/web
+
+Implement postgreSql
+---------------------
+https://damienbod.com/2016/01/11/asp-net-5-with-postgresql-and-entity-framework-7/
+
+https://www.geeksforgeeks.org/postgresql-case/?ref=lbp
+
+Credential
+----------
+Username: postgres
+Password: postgres
+
+Admin@123
+
+Admin@123
+
+setting
+Git Errors:
+-----------
+
+1> git fatal : unable to create .git/index.lock file exists - Solution: del .git\index.lock
+
+
+
+user: bhavesh_fl@outlook.com
+pass: Admin@123
+token : 7a970695-5f65-4056-ab0e-9c6fd40ad7e6
+
+
+VPN connect credential
+----------------------
+Username: shradhha
+PW: ^qm>)J4]"#
+
+
+http://192.168.1.13/TAP/
+BONOBO repository will be accessible using VPN with below address
+http://192.168.1.13/BonoboGitServer/
+
+Same for TAP
+http://192.168.1.13/TAP/
+
+PipeDrive Account [20210528]
+----------------------------
+dalmuhemla@biyac.com/ Admin@123
+
+Check pc Ip
+------------
+
+
+In CMD: C:\Windows\System32 go to path
+and execute command "ipconfig /all"
+
+Then check  IPv4 Address.
+
+ipconfig /all
+
+IPV4 address: 192.168.43.135
+
+Date Format c#
+------------
+string str = DateTime.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'");
+
+http://113.212.87.157:8080/Account/Login
+
+http://192.168.1.33:9046/
+
+Get Date befor 30 day in sql server
+-----------------------------------
+dateadd(day, -30, getdate())
+
+
+SSR
+-------
+https://dzone.com/articles/angular-server-side-rendering-ssr-made-easy-with-a
+
+Calender
+--------
+https://fullcalendar.io/docs/angular
+
+https://angular-calendar.com/docs/
+
+https://stackblitz.com/edit/angular-calendar?file=package.json
+https://stackblitz.com/edit/material-calendar?file=app%2Froutes%2Fhome.component.html
+
+
+
+For Reference column drag-drop
+------------------------------
+http://angular-material.fusetheme.com/apps/tasks
+
+
+https://github.com/fullcalendar/fullcalendar/issues/4784
+
+Email Credential
+-------------------
+
+email id: Shraddha.prajapati@techavidus.com
+TAP Password: SD@TA10
+
+
+noknekuspu@biyac.com /admin
+
+
+https://far-pint.pipedrive.com/activities/calendar/user/12218415
+
+
+
+
+Snackbar
+--------
+https://stackoverflow.com/questions/48939363/angular-5-matsnackbar-change-action-button-color
+
+Drag-Drop file with percentage
+------------------------------
+https://stackblitz.com/edit/angular-drag-n-drop-directive
+
+
+https://stackoverflow.com/questions/56677813/angular-material-table-how-to-pass-object-to-displayedcolumns-instead-of-array
+
+
+Angular 12 with universal 
+-------------------------
+https://www.ganatan.com/tutorials/server-side-rendering-with-angular-universal
+
+
+TAP: http://113.212.87.157:8080/
+
+
+
+BONOBO repository will be accessible using VPN with below address
+http://192.168.1.13/BonoboGitServer/
+
+Same for TAP
+http://192.168.1.13/TAP/
+D:\Projects\OneClapp\dev-azure\app-crm\dist\fuse
+
+https://markscodingspot.com/send-html-emails-with-attachments-using-fluent-email-csharp-and-net-5/
+
+
+https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview
+
+
+
+
+https://codepen.io/vlemoine/pen/MLwygX
+https://jsfiddle.net/UselessCode/qm5AG/
+https://stackoverflow.com/questions/42290935/how-to-add-start-time-and-end-time-in-ics-calendar-in-javascript
+https://stackoverflow.com/questions/49358161/create-ics-file-and-send-email-with-attachment-using-c-sharp
+
+https://www.htmlelements.com/docs/scheduler-google-calendar-sync/
+https://calendar.google.com/calendar/u/0/r?pli=1
+
+https://developers.google.com/calendar/api/v3/reference/events/insert?apix_params=%7B%22calendarId%22%3A%22de1ko00hqi1m7g8l14i03eiv1c%40group.calendar.google.com%22%2C%22maxAttendees%22%3A5%2C%22sendNotifications%22%3Atrue%2C%22sendUpdates%22%3A%22all%22%2C%22supportsAttachments%22%3Atrue%2C%22resource%22%3A%7B%22end%22%3A%7B%22date%22%3A%222021-07-29%22%7D%2C%22start%22%3A%7B%22date%22%3A%222021-07-29%22%7D%7D%7D#try-it
+
+VPN Credential
+--------------
+UserNAme: shradhha
+PW: ^qm>)J4]"#
+
+
+"DefaultConnection": "Server=localhost\\MSSQLSERVER01;Database=OneClappDB_Testing11;Trusted_Connection=True;MultipleActiveResultSets=True;"
+
+
+
+
+"DataConnectionString": "Data Source=192.168.1.33\\SS2019;User ID=sa;Password=Admin@123;Initial Catalog=NationWidePaperLive;Integrated Security=False;Persist Security Info=False",
+  table-fixed
+  
+  
+  Hello,
+  
+  Yesterday, I was unable to complete 7 hour working because of heavy rain and electricity problem. I had completed 6 hour and 43 minutes only 17 minute remaining.
+  I am requesting to team for yesterday (29th September 2021)consider as full day.
+  
+  Thanks,
+  Shraddha P
+  
+  
+  {
+	"resource": "/d:/Projects/OneClapp/dev-azure/api-crm/OneClapp.api/Controllers/TokenController.cs",
+	"owner": "msCompile",
+	"code": "CS0029",
+	"severity": 8,
+	"message": "Cannot implicitly convert type 'OneClapp.data.Models.ViewModels.WeClappUserVM' to 'OneClapp.data.Models.Tables.WeClappUser' [D:\\Projects\\OneClapp\\dev-azure\\api-crm\\OneClapp.api\\OneClapp.api.csproj]",
+	"startLineNumber": 207,
+	"startColumn": 23,
+	"endLineNumber": 207,
+	"endColumn": 23
+}
+
+dotnet ef migrations add "Add_ERPSystemColumnMap_Table_20211004"
+
+
+Angular 9 Hammer module
+----------------------
+
+https://ndreznotanto.medium.com/gesture-swipe-tap-pinch-in-angular-9-application-using-hammer-js-5a8f437dbe0a
+https://stackblitz.com/edit/to-the-left-to-the-right?file=app%2Fapp.component.html
+https://stackblitz.com/edit/angular-tinder-swipe-ukwvyz?file=src%2Fapp%2Fapp.module.ts
+
+
+
+SSR
+-------
+https://www.bacancytechnology.com/blog/server-side-rendering-with-angular-universal/
+
+select * from
+
+
+20220505094212_Add_CustomDomainEmailConfig_Table_20220505
+
+
+
+Brand	Card number
+American Express	3782 822463 10005
+Mastercard	2223 0000 1047 9399
+VISA	4543 4740 0224 9996
+
+
+Task management module
+------------------------
+
+https://app.clickup.com/ : bhavesh.ladva@techavidus.com / Admin@123
+
+https://trial.scoro.com/ : 
+
+
+
+OpenID
+
+https://kevinchalet.com/2017/01/30/implementing-simple-token-authentication-in-aspnet-core-with-openiddict/
+https://github.com/Ngineer101/openid-connect-dotnet-5/blob/master/NWBlog.OpenIdConnect.Demo/Controllers/AuthenticationController.cs
+https://nwb.one/blog/openid-connect-dotnet-5
+
+https://dev.to/robinvanderknaap/setting-up-an-authorization-server-with-openiddict-part-iii-client-credentials-flow-55lp
+https://dev.to/robinvanderknaap/setting-up-an-authorization-server-with-openiddict-part-v-openid-connect-a8j
+
+https://github.com/robinvanderknaap/authorization-server-openiddict
+
+
+{
+    "Name": "PostmanProject",
+    "Description": "Testing",
+    "EstimatedTime": {
+        "hours": "30",
+        "minutes": "10",
+        "seconds": "0"
+    }
+}
+
+
+
+wlnsieuugfdxwrkw
+
+
+R & D part for project
+-------------------------
+calendar month view click on cell open textbox using angular-calendar
+SignalR issues
+After scroll drag not working
+
+
+
+
+
+
+"DefaultConnection":  "User ID=postgres;Password=postgres;Host=localhost;Port=5432;Database=beMate_DB_TestToday;Pooling=true;"
+
+
+
+http://coding-karma.com/2019/12/19/deploying-angular-8-application-to-iis-server/
+
+
+https://www.digitalocean.com/community/tutorials/how-to-schedule-automatic-backups-for-postgresql-with-pgagent-in-pgadmin
+
+https://learn.microsoft.com/en-us/previous-versions/office/office-365-api/api/version-2.0/contacts-rest-operations
+
+
+https://github.com/openiddict/openiddict-core/issues/180
+https://stackoverflow.com/questions/48808349/openiddict-introspect-not-working-the-access-token-is-not-valid
+https://stackoverflow.com/questions/47310562/openiddict-introspection-not-working-when-identity-and-resource-server-are-in
